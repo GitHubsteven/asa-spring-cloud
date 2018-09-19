@@ -1,4 +1,4 @@
-package com.asa.eurekaclient;
+package com.asa.configclient;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
