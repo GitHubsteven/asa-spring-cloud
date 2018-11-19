@@ -1,8 +1,10 @@
 package com.asa.eurekaclient.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Map;
 
@@ -15,7 +17,8 @@ import java.util.Map;
 @Controller
 @RequestMapping("/service/hi")
 public class HiController {
-    @RequestMapping("/cn")
+    @PostMapping(value = "/cn")
+    @ResponseBody
     String hiFromCN(@RequestBody Map<String, Object> param) {
         String name = (String) param.get("name");
         return ("你好, " + name);
