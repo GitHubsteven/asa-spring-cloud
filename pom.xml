@@ -26,6 +26,7 @@
         <module>serice-feign</module>
         <module>service-zuul</module>
         <module>spring-config</module>
+        <module>business</module>
     </modules>
 
     <repositories>
