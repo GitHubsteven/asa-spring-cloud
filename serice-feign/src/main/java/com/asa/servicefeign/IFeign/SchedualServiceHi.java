@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author: jet.xie
  * @Date: 2018/9/17
  * @Time: 18:48
- * @Description:
+ * @Description: 为什么feign给我的感觉就是一个转发
  * @version: 1.0.0
  */
 @FeignClient(value = "service-hi", fallback = SchedualServiceHiHystric.class)    //通过@ FeignClient（“服务名”），来指定调用哪个服务

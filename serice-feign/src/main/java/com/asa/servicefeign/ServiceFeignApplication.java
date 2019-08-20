@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableEurekaClient    //
-@EnableDiscoveryClient  //向服务中心注册
+//@EnableDiscoveryClient  //向服务中心注册
 @EnableFeignClients //开启Feign的功能
 public class ServiceFeignApplication {
 
