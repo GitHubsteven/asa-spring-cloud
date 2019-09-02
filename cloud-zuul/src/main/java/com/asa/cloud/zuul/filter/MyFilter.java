@@ -1,4 +1,4 @@
-package com.asa.servicezuul.filter;
+package com.asa.cloud.zuul.filter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;

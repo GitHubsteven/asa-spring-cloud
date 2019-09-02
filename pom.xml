@@ -24,11 +24,11 @@
         <module>service-hi</module>
         <module>service-ribbon</module>
         <module>serice-feign</module>
-        <module>service-zuul</module>
         <module>spring-config</module>
         <module>feign-demo</module>
         <module>service-provider</module>
         <module>service-gateway</module>
+        <module>cloud-zuul</module>
 
     </modules>
 
