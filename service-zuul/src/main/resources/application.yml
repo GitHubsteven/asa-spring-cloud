@@ -17,3 +17,9 @@ zuul:
     api-b:
       path: /api-b/**
       serviceId: service-feign
+    service-order:
+      path: /service-order/**
+      serviceId: service-order
+    service-hi:
+      path: /service-hi/**
+      serviceId: service-hi

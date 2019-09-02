@@ -26,7 +26,10 @@
         <module>serice-feign</module>
         <module>service-zuul</module>
         <module>spring-config</module>
-        <module>business</module>
+        <module>feign-demo</module>
+        <module>service-provider</module>
+        <module>service-gateway</module>
+
     </modules>
 
     <repositories>
