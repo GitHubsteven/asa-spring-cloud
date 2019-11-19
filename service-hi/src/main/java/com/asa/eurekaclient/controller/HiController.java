@@ -12,12 +12,11 @@ import java.util.Map;
  * @Date: Created at 10:30 2018/11/19.
  */
 @RestController
-@RequestMapping("/service/hi")
+@RequestMapping("/service")
 public class HiController {
-    @PostMapping(value = "/cn")
-    @ResponseBody
-    String hiFromCN(@RequestBody Map<String, Object> param) {
-        String name = (String) param.get("name");
-        return ("你好, " + name);
+    @RequestMapping(value = "/hi")
+    String hi(@RequestParam("name") String name) {
+        return String.format("hello, %s, welcome to service-hi", name);
     }
+
 }

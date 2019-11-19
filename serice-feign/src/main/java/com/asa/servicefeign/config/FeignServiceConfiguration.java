@@ -2,6 +2,7 @@ package com.asa.servicefeign.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import feign.FeignException;
+import feign.RequestInterceptor;
 import feign.Response;
 import feign.Util;
 import feign.codec.ErrorDecoder;
@@ -52,4 +53,8 @@ public class FeignServiceConfiguration extends FeignClientsConfiguration {
         };
     }
 
+    @Bean
+    RequestInterceptor requestInterceptor() {
+        return new AsaRequestInterceptor();
+    }
 }

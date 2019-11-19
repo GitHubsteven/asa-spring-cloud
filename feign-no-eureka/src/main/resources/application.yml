@@ -1,0 +1,14 @@
+server:
+  port: 9400
+
+spring:
+  application:
+    name: feign-with-static-servers
+api:
+  hi: local-hi
+local-hi:
+  ribbon:
+    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+    listOfServers: localhost:8763
+
+
