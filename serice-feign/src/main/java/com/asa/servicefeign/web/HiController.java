@@ -1,8 +1,7 @@
 package com.asa.servicefeign.web;
 
-import com.asa.servicefeign.IFeign.DemoClient;
-import com.asa.servicefeign.IFeign.SchedualServiceHi;
-import com.asa.servicefeign.api.IDemoService;
+import com.asa.servicefeign.client.DemoClient;
+import com.asa.servicefeign.client.SchedualServiceHi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

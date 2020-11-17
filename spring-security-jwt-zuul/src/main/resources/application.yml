@@ -1,0 +1,21 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8900
+spring:
+  application:
+    name: service-security-zuul
+#路由分发
+zuul:
+  routes:
+    service-hi:
+      path: /openapi/service/hi/**
+      serviceId: SERVICE-HI
+      stripPrefix: 1
+    service-order:
+      path: /openapi/service/order/**
+      serviceId: SERVICE-ORDER
+      stripPrefix: 1

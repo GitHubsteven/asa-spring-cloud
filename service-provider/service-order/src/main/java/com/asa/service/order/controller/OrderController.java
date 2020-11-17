@@ -15,7 +15,7 @@ import java.util.Random;
 @RestController
 @RequestMapping("/service/order")
 public class OrderController {
-    @GetMapping("/getOneOrder")
+    @GetMapping("/getOne")
     public String getOneOrder() {
         Random random = new Random();
         return "order:" + random.nextInt();

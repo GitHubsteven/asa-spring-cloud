@@ -14,8 +14,8 @@ import java.util.Map;
 @RestController
 @RequestMapping("/service")
 public class HiController {
-    @RequestMapping(value = "/hi")
-    String hi(@RequestParam("name") String name) {
+    @RequestMapping(value = "/hi/greeting")
+    String greeting(@RequestParam("name") String name) {
         return String.format("hello, %s, welcome to service-hi", name);
     }
 

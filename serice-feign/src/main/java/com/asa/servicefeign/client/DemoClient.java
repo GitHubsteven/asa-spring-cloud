@@ -1,4 +1,4 @@
-package com.asa.servicefeign.IFeign;
+package com.asa.servicefeign.client;
 
 import com.asa.servicefeign.config.FeignServiceConfiguration;
 import com.asa.servicefeign.api.IDemoService;

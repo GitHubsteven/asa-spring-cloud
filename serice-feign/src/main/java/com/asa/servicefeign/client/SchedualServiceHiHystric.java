@@ -1,4 +1,4 @@
-package com.asa.servicefeign.IFeign;
+package com.asa.servicefeign.client;
 
 import org.springframework.stereotype.Component;
 

@@ -3,7 +3,6 @@ package com.asa.servicefeign.config;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import feign.FeignException;
 import feign.RequestInterceptor;
-import feign.Response;
 import feign.Util;
 import feign.codec.ErrorDecoder;
 import org.springframework.cloud.openfeign.FeignClientsConfiguration;
@@ -31,7 +30,8 @@ public class FeignServiceConfiguration extends FeignClientsConfiguration {
         return (methodKey, response) -> {
             try {
                 String body = Util.toString(response.body().asReader());
-                Map<String, String> value = (Map) objectMapper.readValue(body, HashMap.class);
+                Map<String, String> value = objectMapper.readValue(body, objectMapper.getTypeFactory().
+                        constructMapType(HashMap.class, String.class, String.class));
                 String exceptionName = value.get("exception");
                 String message = value.get("message");
                 if (StringUtils.isEmpty(exceptionName)) {
@@ -44,7 +44,9 @@ public class FeignServiceConfiguration extends FeignClientsConfiguration {
                         String code = value.get("error");
                         return (Exception) clazz.getConstructor(String.class, String.class).newInstance(code, message);
                     } else {
-                        return Exception.class.isAssignableFrom(clazz) && !StringUtils.isEmpty(message) ? (Exception) clazz.getConstructor(String.class).newInstance(message) : (Exception) clazz.newInstance();
+                        return Exception.class.isAssignableFrom(clazz) && !StringUtils.isEmpty(message) ?
+                                (Exception) clazz.getConstructor(String.class).newInstance(message) :
+                                (Exception) clazz.newInstance();
                     }
                 }
             } catch (Exception var10) {
