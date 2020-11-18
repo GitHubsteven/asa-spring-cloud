@@ -12,10 +12,13 @@ spring:
 zuul:
   routes:
     service-hi:
-      path: /openapi/service/hi/**
+      path: /service/hi/**
       serviceId: SERVICE-HI
-      stripPrefix: 1
+      stripPrefix: false
     service-order:
-      path: /openapi/service/order/**
+      path: /service/order/**
       serviceId: SERVICE-ORDER
-      stripPrefix: 1
+      stripPrefix: false
+
+jwt:
+  secret: and0
