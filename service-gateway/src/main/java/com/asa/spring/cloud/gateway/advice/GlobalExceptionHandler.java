@@ -3,6 +3,7 @@ package com.asa.spring.cloud.gateway.advice;
 import com.asa.spring.cloud.gateway.bean.ResponseData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -14,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
  * @Description:
  * @date: Created at 15:06 2019/8/9.
  */
-//@ControllerAdvice
+@ControllerAdvice
 public class GlobalExceptionHandler {
     private Logger logger =
             LoggerFactory.getLogger(GlobalExceptionHandler.class);

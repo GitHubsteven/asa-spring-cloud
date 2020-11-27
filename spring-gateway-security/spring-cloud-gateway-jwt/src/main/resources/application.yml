@@ -1,5 +1,5 @@
 server:
-  port: 8800
+  port: 8810
 
 #注册中心
 eureka:
@@ -7,14 +7,12 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 jwt:
-  secret: and0
+  secret: hello,jwt!
 
 
 spring:
   application:
-    name: service-gateway
-#  profiles:
-#    active: rewritepath_route
+    name: cloud-gateway-jwt
   cloud:
     gateway:
       discovery:
@@ -34,4 +32,21 @@ spring:
             - Path=/openapi/service/order/**
           filters:
             - StripPrefix=1
-            - RewritePath=/foo/(?<segment>.*), /$\{segment}
+        - id: service-user
+          uri: http://localhost:${server.port}
+          predicates:
+            - Path=/openapi/service/user/**
+          filters:
+            - StripPrefix=1
+#            - name: Logging
+#              args:
+#                baseMessage: Custom filter factory
+#                preLogger: true
+#                postLogger: true
+
+config:
+  security:
+    ignoreUrls:
+      - /openapi/service/user/authentication
+      - /openapi/service/user/login
+

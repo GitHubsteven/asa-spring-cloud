@@ -31,6 +31,9 @@
         <module>cloud-zuul</module>
         <module>feign-no-eureka</module>
         <module>spring-security-jwt-zuul</module>
+        <module>spring-shiro-jwt-gateway</module>
+        <module>spring-gateway-security</module>
+        <module>spring-cloud-gateway-jwt</module>
 
     </modules>
 
@@ -71,9 +74,9 @@
                 <version>0.9.1</version>
             </dependency>
             <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt</artifactId>
-                <version>0.9.0</version>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring-boot-web-starter</artifactId>
+                <version>1.7.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

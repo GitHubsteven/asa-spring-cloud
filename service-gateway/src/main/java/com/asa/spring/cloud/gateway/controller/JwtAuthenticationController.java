@@ -42,6 +42,11 @@ public class JwtAuthenticationController {
         return ResponseEntity.ok(new JwtResponse(token));
     }
 
+    @GetMapping(value = "/get/{userId}")
+    public ResponseEntity<?> get(@PathVariable("userId") String userId) throws Exception {
+        return ResponseEntity.ok("user" + userId);
+    }
+
 
     private void authenticate(String username, String password) throws Exception {
         try {
