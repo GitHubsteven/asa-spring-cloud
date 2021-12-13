@@ -1,9 +1,10 @@
-package com.asa.servicefeign.web;
+package com.asa.servicefeign.controller;
 
 import com.asa.servicefeign.client.DemoClient;
 import com.asa.servicefeign.client.SchedualServiceHi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,13 +26,18 @@ public class HiController {
     @Autowired
     private DemoClient demoClient;
 
-    @GetMapping(value = "/hi")
-    public String sayHi(@RequestParam String name) {
+    @PostMapping(value = "/hi")
+    public String sayHi(@RequestParam(value = "name") String name) {
         return schedualServiceHi.sayHiFromClientOne(name);
     }
 
     @GetMapping(value = "/test")
     public String test() {
         return demoClient.hello();
+    }
+
+    @GetMapping("/api/get")
+    public String api() {
+        return "api";
     }
 }

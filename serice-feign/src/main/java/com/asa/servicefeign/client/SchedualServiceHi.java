@@ -16,6 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @FeignClient(value = "service-hi", fallback = SchedualServiceHiHystric.class)    //通过@ FeignClient（“服务名”），来指定调用哪个服务
 public interface SchedualServiceHi {
-    @RequestMapping(value = "/hi", method = RequestMethod.GET)
+    @RequestMapping(value = "/hi/greeting", method = RequestMethod.GET)
     String sayHiFromClientOne(@RequestParam(value = "name") String name);
 }

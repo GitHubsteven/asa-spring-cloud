@@ -12,6 +12,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>service-order</module>
+        <module>service-product</module>
     </modules>
 
     <dependencies>
