@@ -31,9 +31,7 @@
         <module>cloud-zuul</module>
         <module>feign-no-eureka</module>
         <module>spring-security-jwt-zuul</module>
-        <module>spring-shiro-jwt-gateway</module>
         <module>spring-gateway-security</module>
-        <module>spring-cloud-gateway-jwt</module>
 
     </modules>
 
